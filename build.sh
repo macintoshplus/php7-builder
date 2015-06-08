@@ -1,24 +1,69 @@
+rm -rf /opt/php7
+
 cd /sources
 
+if [ -d php-src ]; then;
+git pull php-src
+else
 git clone https://github.com/php/php-src php-src
+fi
 
 cd /sources/php-src
 
+make clean
+
 ./buildconf
 
-./configure --prefix=/opt/php7 --enable-fpm --with-libxml-dir=/usr/lib/x86_64-linux-gnu/ --enable-bcmath --enable-exif --enable-intl --enable-pcntl
+./configure --prefix=/opt/php7 --enable-fpm --with-libxml-dir=/usr/lib/x86_64-linux-gnu/ --enable-bcmath --enable-exif --enable-intl --enable-calendar --enable-zip --enable-soap --enable-ftp --enable-pcntl --enable-mbstring --with-openssl --with-curl --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-mcrypt --with-zlib --with-bz2 --with-config-file-path=/opt/php7/etc/ --with-config-file-scan-dir=/opt/php7/etc/modules/
 
 make
 
 make install
 
-cd /sources/php-src/ext/gd
+cp php.ini-* /opt/php7/etc/
+
+cd ext/gd
 
 /opt/php7/bin/phpize
 
-./configure --with-zlib-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config
+./configure --prefix=/opt/php7 --with-zlib-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --path-php-config=/opt/php7/bin/php-config
 
 make
 
 make install
 
+cd ../pdo_pgsql
+
+/opt/php7/bin/phpize
+
+./configure --prefix=/opt/php7/ --with-php-config=/opt/php7/bin/php-config
+
+make
+
+make install
+
+cd ../imap
+
+/opt/php7/bin/phpize
+
+./configure --with-imap --with-imap-ssl --with-kerberos --prefix=/opt/php7/ --with-php-config=/opt/php7/bin/php-config
+
+make
+
+make install
+
+
+cd ../../
+
+echo 'End of build :' >> timeofbuild
+date >> timeofbuild
+
+cp timeofbuild /opt/php7/time_of_build
+
+now=$(date +"%Y-%m-%d")
+
+version=$(cat /etc/debian_version)
+
+arch=$(uname -m)
+
+tar czvf /opt/php700-dev-$arch-debian$version-$now.tar.gz /opt/php7
