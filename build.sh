@@ -1,8 +1,10 @@
+#!/bin/sh
+
 rm -rf /opt/php7
 
 cd /sources
 
-if [ -d php-src ]; then;
+if [ -d php-src ]; then
 git pull php-src
 else
 git clone https://github.com/php/php-src php-src
