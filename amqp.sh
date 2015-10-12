@@ -2,7 +2,7 @@
 
 echo Build $0
 
-git clone https://github.com/alanxz/rabbitmq-c /sources/rabbitmq-c
+git clone https://github.com/alanxz/rabbitmq-c.git /sources/rabbitmq-c
 
 cd /sources/rabbitmq-c
 
@@ -13,7 +13,7 @@ make
 make install
 
 
-git clone https://github.com/pdezwart/php-amqp /sources/php-src/ext/amqp
+git clone https://github.com/pdezwart/php-amqp.git /sources/php-src/ext/amqp
 
 cd /sources/php-src/ext/amqp
 
