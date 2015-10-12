@@ -8,11 +8,13 @@ RUN apt-get install -y make git autoconf automake libtool re2c bison g++ gcc pkg
 
 RUN apt-get install -y libfreetype6 libfreetype6-dev libvpx1 libvpx-dev libxpm4 libxpm-dev libssl1.0.0 libssl-dev libcurl3 libcurl3-gnutls libcurl4-openssl-dev libmcrypt4 libmcrypt-dev libc-client2007e libc-client-dev libpq5 libpq-dev libbz2-1.0 libbz2-dev 
 
-COPY build.sh /build.sh
+RUN mkdir /builder
 
-RUN chmod 777 /build.sh
+COPY *.sh /builder/
+
+RUN chmod 777 /builder/*.sh
 
 VOLUME /sources
 VOLUME /opt
 
-ENTRYPOINT ["/build.sh"]
+ENTRYPOINT ["/builder/php7.sh", "/builder/build.sh"]
