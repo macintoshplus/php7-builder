@@ -8,7 +8,7 @@ cd /sources/php-src/ext/xdebug
 
 /opt/php7/bin/phpize
 
-./configure --prefix=/opt/php7 --path-php-config=/opt/php7/bin/php-config
+./configure --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config --enable-xdebug
 
 make -j 5 all
 
