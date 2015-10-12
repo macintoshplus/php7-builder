@@ -4,9 +4,15 @@ echo "Attention a l'emplacement de la librairie"
 
 echo Build $0
 
-hg clone https://bitbucket.org/xi/libyaml
+#hg clone https://bitbucket.org/xi/libyaml
+cd /sources
+wget http://pyyaml.org/download/libyaml/yaml-0.1.5.tar.gz
 
-./configure
+tar xvzf yaml-0.1.5.tar.gz
+
+cd yaml-0.1.5
+
+./configure --prefix=/opt/php7
 
 make
 
@@ -18,7 +24,7 @@ cd /sources/php-src/ext/yaml
 
 /opt/php7/bin/phpize
 
-./configure --with-yaml --prefix=/opt/php7 --path-php-config=/opt/php7/bin/php-config
+./configure --with-yaml --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config
 
 make
 
