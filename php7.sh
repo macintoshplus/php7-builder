@@ -3,7 +3,9 @@
 cd /sources
 
 if [ -d php-src ]; then
-git pull php-src
+cd php-src
+git pull
+cd ..
 else
 git clone https://github.com/php/php-src.git php-src
 fi
