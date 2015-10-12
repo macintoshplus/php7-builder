@@ -6,9 +6,8 @@ git clone https://github.com/alanxz/rabbitmq-c.git /sources/rabbitmq-c
 
 cd /sources/rabbitmq-c
 
-./configure
-
-make 
+autoreconf -i
+./configure --prefix=/opt/php7
 
 make install
 
@@ -19,8 +18,8 @@ cd /sources/php-src/ext/amqp
 
 /opt/php7/bin/phpize
 
-./configure --prefix=/opt/php7 --path-php-config=/opt/php7/bin/php-config
+./configure --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config --with-librabbitmq-dir=/opt/php7/ --with-amqp
 
-make -j 5 all
+make
 
 make install
