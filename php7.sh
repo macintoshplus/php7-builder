@@ -9,4 +9,4 @@ git clone https://github.com/php/php-src.git php-src
 fi
 
 cd php-src
-git checkout php-7.0
+git checkout PHP-7.0
