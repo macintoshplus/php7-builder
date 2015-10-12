@@ -2,15 +2,12 @@
 
 rm -rf /opt/php7
 
-cd /sources
-
-if [ -d php-src ]; then
-git pull php-src
-else
-git clone https://github.com/php/php-src php-src
-fi
 
 cd /sources/php-src
+
+cd pear
+wget http://pear.php.net/go-pear.phar
+cd ..
 
 make clean
 
@@ -54,6 +51,8 @@ make
 
 make install
 
+branch=$(git branch  | awk '{ print $2 }')
+phpversion=$(bin/php -v | awk 'NR==1' | awk '{ print $2 }')
 
 cd ../../
 
@@ -67,5 +66,6 @@ now=$(date +"%Y-%m-%d")
 version=$(cat /etc/debian_version)
 
 arch=$(uname -m)
+system=$(uname -s)
 
-tar czvf /opt/php700-dev-$arch-debian$version-$now.tar.gz /opt/php7
+tar czvf /opt/php$phpversion-$branch-$arch-$system$version-$now.tar.gz /opt/php7
