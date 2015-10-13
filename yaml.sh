@@ -14,6 +14,8 @@ cd yaml-0.1.5
 
 ./configure --prefix=/opt/php7
 
+make clean
+
 make
 
 make install
@@ -26,6 +28,8 @@ git checkout php7
 /opt/php7/bin/phpize
 
 ./configure --with-yaml --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config
+
+make clean
 
 make
 

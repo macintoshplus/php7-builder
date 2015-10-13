@@ -9,6 +9,8 @@ cd /sources/rabbitmq-c
 autoreconf -i
 ./configure --prefix=/opt/php7
 
+make clean
+
 make install
 
 
@@ -21,6 +23,8 @@ git checkout phpng
 /opt/php7/bin/phpize
 
 ./configure --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config --with-librabbitmq-dir=/opt/php7/ --with-amqp
+
+make clean
 
 make
 

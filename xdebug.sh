@@ -10,6 +10,8 @@ cd /sources/php-src/ext/xdebug
 
 ./configure --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config --enable-xdebug
 
+make clean
+
 make -j 5 all
 
 make install

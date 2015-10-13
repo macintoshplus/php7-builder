@@ -6,6 +6,8 @@ cd /sources/php-src/ext/imap
 
 ./configure --with-imap --with-imap-ssl --with-kerberos --prefix=/opt/php7/ --with-php-config=/opt/php7/bin/php-config
 
+make clean
+
 make
 
 make install

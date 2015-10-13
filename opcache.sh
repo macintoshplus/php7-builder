@@ -8,6 +8,8 @@ cd /sources/php-src/ext/opcache
 
 ./configure --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config
 
+make clean
+
 make
 
 make install
