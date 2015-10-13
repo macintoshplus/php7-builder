@@ -23,5 +23,6 @@ The last step archive your build into tar.gz file.
 
 ```
 docker pull macintoshplus/php7-builder
-docker run -v /path/to/php7/sources:/sources -v /path/to/php7/opt:/opt macintoshplus/php7-builder:latest
+docker run -v /path/to/php7/sources:/sources -v /path/to/php7/opt:/opt macintoshplus/php7-builder:latest /bin/bash
 ```
+See first  paragraphe.
