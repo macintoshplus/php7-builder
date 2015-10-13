@@ -21,51 +21,12 @@ make install
 
 cp php.ini-* /opt/php7/etc/
 
-cd ext/gd
+gd.sh
 
-/opt/php7/bin/phpize
+pgsql.sh
 
-./configure --prefix=/opt/php7 --with-zlib-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --with-php-config=/opt/php7/bin/php-config
+imap.sh
 
-make
+opcode.sh
 
-make install
-
-cd ../pdo_pgsql
-
-/opt/php7/bin/phpize
-
-./configure --prefix=/opt/php7/ --with-php-config=/opt/php7/bin/php-config
-
-make
-
-make install
-
-cd ../imap
-
-/opt/php7/bin/phpize
-
-./configure --with-imap --with-imap-ssl --with-kerberos --prefix=/opt/php7/ --with-php-config=/opt/php7/bin/php-config
-
-make
-
-make install
-
-branch=$(git branch  | awk '{ print $2 }')
-phpversion=$(bin/php -v | awk 'NR==1' | awk '{ print $2 }')
-
-cd ../../
-
-echo 'End of build :' >> timeofbuild
-date >> timeofbuild
-
-cp timeofbuild /opt/php7/time_of_build
-
-now=$(date +"%Y-%m-%d")
-
-version=$(cat /etc/debian_version)
-
-arch=$(uname -m)
-system=$(uname -s)
-
-tar czvf /opt/php$phpversion-$branch-$arch-$system$version-$now.tar.gz /opt/php7
+archive.sh
