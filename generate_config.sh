@@ -8,7 +8,7 @@ fi;
 
 cd /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/
 
-for f in /*.so; do
+for f in *.so; do
 
    echo 'extensions='$f > /opt/php7/etc/modules/$f
 
