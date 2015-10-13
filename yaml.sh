@@ -21,6 +21,7 @@ make install
 git clone https://github.com/php/pecl-file_formats-yaml.git /sources/php-src/ext/yaml
 
 cd /sources/php-src/ext/yaml
+git checkout php7
 
 /opt/php7/bin/phpize
 
