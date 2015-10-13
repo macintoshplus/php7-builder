@@ -1,7 +1,5 @@
 #!/bin/sh
 
-rm -rf /opt/php7
-
 cd /sources/php-src/ext/imap
 
 /opt/php7/bin/phpize
