@@ -30,3 +30,9 @@ git checkout php7
 make
 
 make install
+
+if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/yaml.so ] ; then
+
+echo "extension=yaml.so" > /opt/php7/etc/module/yaml.ini
+
+fi;

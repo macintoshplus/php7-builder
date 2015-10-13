@@ -9,3 +9,9 @@ cd /sources/php-src/ext/imap
 make
 
 make install
+
+if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/imap.so ] ; then
+
+echo "extension=imap.so" > /opt/php7/etc/module/imap.ini
+
+fi;

@@ -13,3 +13,8 @@ cd /sources/php-src/ext/xdebug
 make -j 5 all
 
 make install
+if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so ] ; then
+
+echo "zend_extension=xdebug.so" > /opt/php7/etc/module/xdebug.ini
+
+fi;

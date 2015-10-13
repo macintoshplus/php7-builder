@@ -9,3 +9,10 @@ cd /sources/php-src/ext/gd
 make
 
 make install
+
+if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/gd.so ] ; then
+
+echo "extension=gd.so" > /opt/php7/etc/module/gd.ini
+
+fi;
+

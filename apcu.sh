@@ -14,3 +14,10 @@ git checkout seven
 make
 
 make install
+
+
+if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/apcu.so ] ; then
+
+echo "extension=apcu.so" > /opt/php7/etc/module/apcu.ini
+
+fi;

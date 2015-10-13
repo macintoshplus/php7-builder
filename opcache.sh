@@ -11,3 +11,9 @@ cd /sources/php-src/ext/opcache
 make
 
 make install
+
+if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/opcache.so ] ; then
+
+echo "zend_extension=opcache.so" > /opt/php7/etc/module/opcache.ini
+
+fi;
