@@ -21,14 +21,14 @@ make install
 
 cp php.ini-* /opt/php7/etc/
 
-gd.sh
+./amqp.sh
+./apcu.sh
+./gd.sh
+./imap.sh
+./opcache.sh
+./pgsql.sh
+./redis.sh
+./xdebug.sh
+./yaml.sh
 
-pgsql.sh
-
-imap.sh
-
-opcache.sh
-
-generate_config.sh
-
-archive.sh
+./archive.sh
