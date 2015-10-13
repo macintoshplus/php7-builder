@@ -33,6 +33,6 @@ make install
 
 if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/yaml.so ] ; then
 
-echo "extension=yaml.so" > /opt/php7/etc/module/yaml.ini
+echo "extension=yaml.so" > /opt/php7/etc/modules/yaml.ini
 
 fi;

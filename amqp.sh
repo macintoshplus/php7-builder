@@ -28,6 +28,6 @@ make install
 
 if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/amqp.so ] ; then
 
-echo "extension=amqp.so" > /opt/php7/etc/module/amqp.ini
+echo "extension=amqp.so" > /opt/php7/etc/modules/amqp.ini
 
 fi;

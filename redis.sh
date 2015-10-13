@@ -17,6 +17,6 @@ make install
 
 if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/redis.so ] ; then
 
-echo "extension=redis.so" > /opt/php7/etc/module/redis.ini
+echo "extension=redis.so" > /opt/php7/etc/modules/redis.ini
 
 fi;

@@ -17,6 +17,6 @@ make install
 
 if [ -f /opt/php7/lib/php/extensions/no-debug-non-zts-20151012/memcached.so ] ; then
 
-echo "extension=memcached.so" > /opt/php7/etc/module/memcached.ini
+echo "extension=memcached.so" > /opt/php7/etc/modules/memcached.ini
 
 fi;

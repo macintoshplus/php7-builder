@@ -2,6 +2,7 @@
 
 rm -rf /opt/php7
 
+scriptdir=$(dirname $0)
 
 cd /sources/php-src
 
@@ -27,14 +28,15 @@ else
 mkdir /opt/php7/etc/modules
 fi;
 
-./amqp.sh
-./apcu.sh
-./gd.sh
-./imap.sh
-./opcache.sh
-./pgsql.sh
-./redis.sh
-./xdebug.sh
-./yaml.sh
 
-./archive.sh
+$scriptdir/amqp.sh
+$scriptdir/apcu.sh
+$scriptdir/gd.sh
+$scriptdir/imap.sh
+$scriptdir/opcache.sh
+$scriptdir/pgsql.sh
+$scriptdir/redis.sh
+$scriptdir/xdebug.sh
+$scriptdir/yaml.sh
+
+$scriptdir/archive.sh
