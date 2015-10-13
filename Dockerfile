@@ -17,4 +17,4 @@ RUN chmod 777 /builder/*.sh
 VOLUME /sources
 VOLUME /opt
 
-ENTRYPOINT ["/builder/php7.sh", "/builder/build.sh"]
+#ENTRYPOINT ["/builder/php7.sh", "/builder/build.sh"]
