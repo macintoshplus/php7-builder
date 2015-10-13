@@ -21,6 +21,12 @@ make install
 
 cp php.ini-* /opt/php7/etc/
 
+if [ -d /opt/php7/etc/modules ] ; then
+echo Dir exist !
+else
+mkdir /opt/php7/etc/modules
+fi;
+
 ./amqp.sh
 ./apcu.sh
 ./gd.sh
