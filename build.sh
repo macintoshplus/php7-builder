@@ -27,6 +27,8 @@ pgsql.sh
 
 imap.sh
 
-opcode.sh
+opcache.sh
+
+generate_config.sh
 
 archive.sh
