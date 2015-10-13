@@ -6,7 +6,7 @@ cd /sources/php-src/ext/opcache
 
 /opt/php7/bin/phpize
 
-./configure --prefix=/opt/php7 --path-php-config=/opt/php7/bin/php-config
+./configure --prefix=/opt/php7 --with-php-config=/opt/php7/bin/php-config
 
 make
 
