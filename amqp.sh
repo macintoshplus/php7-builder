@@ -12,9 +12,11 @@ autoreconf -i
 make install
 
 
-git clone https://github.com/pdezwart/php-amqp.git /sources/php-src/ext/amqp
+#git clone https://github.com/pdezwart/php-amqp.git /sources/php-src/ext/amqp
+git https://github.com/hanikesn/php-amqp.git /sources/php-src/ext/amqp
 
 cd /sources/php-src/ext/amqp
+git checkout phpng
 
 /opt/php7/bin/phpize
 
